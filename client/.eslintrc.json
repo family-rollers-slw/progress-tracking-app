@@ -19,6 +19,14 @@
 		"indent": ["error", "tab"],
 		"linebreak-style": ["error", "windows"],
 		"quotes": ["error", "double"],
-		"semi": ["error", "always"]
+		"semi": ["error", "always"],
+		"no-console": ["warn"],
+		"react/self-closing-comp": ["warn", { "component": true, "html": true }]
+	},
+	"root": true,
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
 	}
 }

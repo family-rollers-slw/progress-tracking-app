@@ -7,5 +7,6 @@
 	"prettier.singleQuote": false,
 	"prettier.semi": true,
 	"prettier.bracketSpacing": true,
-	"prettier.endOfLine": "crlf"
+	"prettier.endOfLine": "crlf",
+	"editor.defaultFormatter": "esbenp.prettier-vscode"
 }
