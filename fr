@@ -1,0 +1,40 @@
+#!/usr/bin/bash
+
+action=$1
+
+print_message () {
+	printf " --- %s --- \n\n" "$1"
+}
+
+install_project () {
+	print_message "Installing client..."
+	cd client || exit
+	npm install
+
+	print_message "Installing server..."
+	cd ..
+	npm install
+}
+
+watch_project () {
+	npm run watch
+}
+
+start_project () {
+	npm run dev
+}
+
+case $action in
+	install)
+		install_project
+		;;
+	start)
+		start_project
+		;;
+	watch)
+		watch_project
+		;;
+	*)
+		print_message "UNHANDLED OPTION: Command -> $action <- not recognized"
+		;;
+esac
