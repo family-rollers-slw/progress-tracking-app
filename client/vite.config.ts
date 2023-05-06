@@ -1,7 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import svgrPlugin from "vite-plugin-svgr";
-import jsconfigPaths from 'vite-jsconfig-paths';
+import path from "path";
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,13 +12,14 @@ export default defineConfig({
       "/api": "localhost",
     },
   },
+  base: '',
   plugins: [
     react(),
+	tsconfigPaths(),
     svgrPlugin({
       svgrOptions: {
         icon: true,
       },
-    }),
-	jsconfigPaths()
+    })
   ],
 });
