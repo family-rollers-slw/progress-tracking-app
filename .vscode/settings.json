@@ -8,5 +8,6 @@
 	"prettier.semi": true,
 	"prettier.bracketSpacing": true,
 	"prettier.endOfLine": "crlf",
-	"editor.defaultFormatter": "esbenp.prettier-vscode"
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"typescript.validate.enable": true
 }
