@@ -1,0 +1,11 @@
+{
+	"editor.formatOnPaste": true,
+	"editor.formatOnType": true,
+	"editor.formatOnSave": true,
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true,
+	"prettier.singleQuote": false,
+	"prettier.semi": true,
+	"prettier.bracketSpacing": true,
+	"prettier.endOfLine": "crlf"
+}

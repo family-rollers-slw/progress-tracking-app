@@ -1,10 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
 
 const FamilyRollers = () => {
-    return <div>Family Rollers Wep App</div>;
+	return <div>Family Rollers Wep App</div>;
 };
-
-FamilyRollers.propTypes = {}
 
 export default FamilyRollers;
