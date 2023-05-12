@@ -2,6 +2,7 @@
 
 # Dependiencies
 
+-   Install Node LTS version
 -   Install VS Code
 -   Install Git Bash
 
