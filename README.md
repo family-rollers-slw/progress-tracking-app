@@ -1,12 +1,12 @@
 ## Install dependencies
 
-# Dependiencies
+### Dependiencies
 
 -   Install Node LTS version
 -   Install VS Code
 -   Install Git Bash
 
-# Suggested VS Code extensions
+## Suggested VS Code extensions
 
 -   ES7+ React/Redux/React-Native snippets
 -   Eslint
@@ -15,6 +15,14 @@
 -   Stylelint
 -   vscode-icons
 -   IntelliSense for CSS class names in HTML
+
+## Clone this repo
+
+```bash
+
+git clone https://github.com/family-rollers-slw/progress-tracking-app.git
+
+```
 
 From project root:
 
