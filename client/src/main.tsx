@@ -1,10 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import FamilyRollers from "views/FamilyRollers";
-import "./index.css";
+import "./styles.module.scss";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-	<React.StrictMode>
-		<FamilyRollers />
-	</React.StrictMode>
+	<FamilyRollers />
 );
