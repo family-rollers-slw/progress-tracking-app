@@ -1,0 +1,14 @@
+@use "assets/sass/variables.scss" as *;
+
+*,
+body,
+base {
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+		sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+	background-color: $body-color;
+	color: $body-font-color;
+}
