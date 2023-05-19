@@ -45,10 +45,7 @@ From project root, run following commands in two different terminals:
 
 ## Tools
 
-# TODO: update packages
-
 -   [React](https://reactjs.org/)
--   [Tailwind CSS](https://tailwindcss.com/)
 -   [TypeScript](https://www.typescriptlang.org/)
 -   [React Router DOM](https://reactrouter.com/)
 -   [Express](https://expressjs.com/)
@@ -56,3 +53,7 @@ From project root, run following commands in two different terminals:
 -   [bcrypt.js](https://www.npmjs.com/package/bcryptjs)
 -   [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
 -   [express-async-handler](https://www.npmjs.com/package/express-async-handler)
+-   [sass](https://sass-lang.com/documentation/)
+-   [SWR](https://swr.vercel.app/)
+-   [Zustand](https://zustand-demo.pmnd.rs/)
+-   [ChakraUI](https://chakra-ui.com/getting-started)
