@@ -5,13 +5,14 @@
 	"repository": "https://github.com/apicgg/vite-mern-template.git",
 	"license": "MIT",
 	"scripts": {
-		"start": "vite",
+		"start": "vite --host",
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"lint:stylelint": "stylelint **/*.scss",
 		"lint:eslint": "eslint **/*.tsx"
 	},
 	"dependencies": {
+		"@chakra-ui/icons": "^2.0.19",
 		"@chakra-ui/react": "^2.6.1",
 		"@emotion/react": "^11.11.0",
 		"@emotion/styled": "^11.11.0",

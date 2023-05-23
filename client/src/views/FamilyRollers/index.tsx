@@ -1,8 +1,17 @@
 import React, { FC } from "react";
-import styles from "./styles.module.scss";
+import { Grid, Container, Box } from "@chakra-ui/react";
+import Menu from "components/Menu";
 
 const FamilyRollers: FC = () => {
-	return <div className={styles.app}>Family Rollers Wep App</div>;
+	return (
+		<Grid templateRows="auto 1fr 4rem" height="100vh">
+			<Menu />
+			<Container>Main Page Content</Container>
+			<Box bg="brand.primary" color="brand.neutral">
+				Footer
+			</Box>
+		</Grid>
+	);
 };
 
 export default FamilyRollers;
