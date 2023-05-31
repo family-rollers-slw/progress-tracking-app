@@ -11,29 +11,45 @@ import {
 	useDisclosure,
 	Collapse,
 	useBreakpointValue,
-	useBoolean,
 } from "@chakra-ui/react";
-import { logo, user } from "assets/images";
+import { logo, user as userImage } from "assets/images";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import useStore from "hooks/store/useStore";
 
 const Menu = () => {
 	const { isOpen, onToggle } = useDisclosure();
 	const isMobile = useBreakpointValue({ base: true, md: false });
 	const direction = isMobile ? "column" : "row";
-	const [loged, setLoged] = useBoolean();
+	const [user, setUser, clearUser] = useStore((state) => [
+		state.user,
+		state.setUser,
+		state.clearUser,
+	]);
 
 	const renderLoggedUser = () => (
-		<Link href="#" onClick={setLoged.off}>
+		<Link href="#" onClick={clearUser}>
 			<Flex alignItems="center" gap="0.5rem">
-				<Image src={user} boxSize="2rem" />
-				<Box whiteSpace="nowrap">Panchito Filomeno</Box>
+				<Image src={user?.src} boxSize="2rem" />
+				<Box whiteSpace="nowrap">
+					{user?.name} {user?.lastName}
+				</Box>
 			</Flex>
 		</Link>
 	);
 
 	const renderLoginOptions = () => (
 		<Flex direction={direction} gap="1rem">
-			<Button variant="outline" size="sm" onClick={setLoged.on}>
+			<Button
+				variant="outline"
+				size="sm"
+				onClick={() =>
+					setUser({
+						name: "Panchito",
+						lastName: "Filomeno",
+						email: "panchito.filomeno@familyrollers.com",
+						src: userImage,
+					})
+				}>
 				Iniciar Sesión
 			</Button>
 			<Button variant="solid" size="sm">
@@ -50,7 +66,7 @@ const Menu = () => {
 			p={isMobile ? "1rem" : ""}>
 			<Link href="#">Nosotros</Link>
 			<Link href="#">Blog</Link>
-			{loged ? renderLoggedUser() : renderLoginOptions()}
+			{user ? renderLoggedUser() : renderLoginOptions()}
 		</Flex>
 	);
 
