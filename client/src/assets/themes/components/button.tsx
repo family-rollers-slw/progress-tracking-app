@@ -8,7 +8,7 @@ const Button: ComponentStyleConfig = {
 			color: "brand.accent.200",
 			_hover: {
 				bg: "brand.accent.50",
-				color: "brand.primary",
+				color: "brand.primary.800",
 			},
 			_active: {
 				bg: "transparent",

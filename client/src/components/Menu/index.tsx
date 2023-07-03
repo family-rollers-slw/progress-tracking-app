@@ -15,27 +15,13 @@ import {
 import { logo, user as userImage } from "assets/images";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import useStore from "hooks/store/useStore";
+import UserAvatar from "components/UserAvatar";
 
 const Menu = () => {
 	const { isOpen, onToggle } = useDisclosure();
 	const isMobile = useBreakpointValue({ base: true, md: false });
 	const direction = isMobile ? "column" : "row";
-	const [user, setUser, clearUser] = useStore((state) => [
-		state.user,
-		state.setUser,
-		state.clearUser,
-	]);
-
-	const renderLoggedUser = () => (
-		<Link href="#" onClick={clearUser}>
-			<Flex alignItems="center" gap="0.5rem">
-				<Image src={user?.src} boxSize="2rem" />
-				<Box whiteSpace="nowrap">
-					{user?.name} {user?.lastName}
-				</Box>
-			</Flex>
-		</Link>
-	);
+	const [user, setUser] = useStore((state) => [state.user, state.setUser]);
 
 	const renderLoginOptions = () => (
 		<Flex direction={direction} gap="1rem">
@@ -66,7 +52,7 @@ const Menu = () => {
 			p={isMobile ? "1rem" : ""}>
 			<Link href="#">Nosotros</Link>
 			<Link href="#">Blog</Link>
-			{user ? renderLoggedUser() : renderLoginOptions()}
+			{user ? <UserAvatar /> : renderLoginOptions()}
 		</Flex>
 	);
 
@@ -76,7 +62,7 @@ const Menu = () => {
 
 	return (
 		<Flex
-			bg="brand.primary"
+			bg="brand.primary.800"
 			color="brand.neutral"
 			fontWeight="medium"
 			direction="column"
