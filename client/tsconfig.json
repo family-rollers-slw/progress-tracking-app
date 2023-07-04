@@ -15,7 +15,10 @@
 		"isolatedModules": true,
 		"noEmit": true,
 		"jsx": "react",
-		"baseUrl": "src"
+		"baseUrl": "src",
+		"paths": {
+			"@shared-types/*": ["../../types/*"]
+		}
 	},
 	"include": ["src"],
 	"references": [{ "path": "./tsconfig.node.json" }]
