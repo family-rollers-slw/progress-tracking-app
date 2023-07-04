@@ -1,4 +1,4 @@
-import { User } from "./user";
+import { User } from "@shared-types/user";
 
 export interface Store {
 	user?: User?;
