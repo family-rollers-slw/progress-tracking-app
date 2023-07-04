@@ -1,10 +1,3 @@
 import mongoose from "mongoose";
 
-mongoose
-	.connect("mongodb://localhost:27017/familly-rollers-db")
-	.then(() => {
-		console.log("Connected to database");
-	})
-	.catch((error: Error) => {
-		console.log("ERROR:", error);
-	});
+mongoose.connect("mongodb://127.0.0.1:27017/familly-rollers-db");

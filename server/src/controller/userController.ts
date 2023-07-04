@@ -24,7 +24,7 @@ const logIn = async (
 				.json({ msg: "Email or Password incorrect." });
 		}
 
-		return res.status(200).json({ msg: "Logged!" });
+		return res.status(200).json({ msg: "Logged!", data: user });
 	} catch (error) {
 		return res.status(500).json({ error });
 	}
@@ -43,7 +43,7 @@ const signIn = async (
 			return res.status(400).json({ msg: "Email is already registered" });
 		}
 
-		newUser = new User(newUser);
+		newUser = new User(userReq);
 		await newUser.save();
 
 		const payload = {
@@ -63,11 +63,19 @@ const signIn = async (
 		);
 		return res.status(200).json(payload);
 	} catch (error) {
-		return res.status(500);
+		console.log("ERROR: ", error);
+		return res.status(500).json({ error });
 	}
 };
 
+const getAllUsers = async (
+	_req: Request,
+	res: Response
+): Promise<Response<string, object>> =>
+	res.status(200).json({ msg: "Connection with the server stablished" });
+
 userRouter.post("/login", logIn);
 userRouter.post("/", signIn);
+userRouter.get("/", getAllUsers);
 
 export default userRouter;
