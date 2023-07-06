@@ -1,19 +1,5 @@
-import express, { Express } from "express";
-import cors from "cors";
-// import jwt from "jsonwebtoken";
-// import bcrypt from "bcryptjs";
-import "./src/config/db";
-import userRouter from "./src/controller/userController";
+import Server from "./src/server";
 
-// import dotenv from "dotenv";
-// Move to config file or env var
-const port = 3001;
+const server = new Server();
 
-const app: Express = express();
-
-app.use(cors());
-app.use(express.json());
-
-app.use("/api/users", userRouter);
-
-app.listen(port, () => console.log(`Server listening on port -> ${port}`));
+server.start();
