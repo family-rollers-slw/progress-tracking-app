@@ -3,13 +3,9 @@ import cors from "cors";
 import "./config/db";
 import UserController from "./controller/UserController";
 import { Controller } from "./general/interfaces/Controller";
+import "dotenv/config";
 
-// Routes
-// import UserRouter from "./controller/UserController";
-
-// import dotenv from "dotenv";
-// Move to config file or env var
-const HARDCODED_PORT = 3001;
+const port = process.env.FR_PORT;
 
 export default class Server {
 	private readonly _app: Express;
@@ -23,7 +19,7 @@ export default class Server {
 		this._app.use(cors());
 		this._app.use(express.json());
 		this.registerRoutes();
-		this._app.set("port", HARDCODED_PORT);
+		this._app.set("port", port);
 	}
 
 	private registerRoutes = () => {
@@ -36,8 +32,8 @@ export default class Server {
 
 	public start() {
 		try {
-			this._app.listen(HARDCODED_PORT, () =>
-				console.log(`Server listening on port -> ${HARDCODED_PORT}`)
+			this._app.listen(port, () =>
+				console.log(`Server listening on port -> ${port}`)
 			);
 		} catch (error) {
 			console.error("Error trying to start server", error);
